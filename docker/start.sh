@@ -168,6 +168,9 @@ function handle_master_upgrade() {
     # update extensions
     [ -f /var/lib/pgsql/data/update_extensions.sql ] && psql --username=postgres --file=/var/lib/pgsql/data/update_extensions.sql postgres
 
+    echo "[$(date +%Y-%m-%dT%H:%M:%S)] Running vacuumdb --all --analyze-in-stages"
+    /usr/lib/postgresql/"${PG_VERSION_TARGET}"/bin/vacuumdb --username=postgres --all --analyze-in-stages
+
     /usr/lib/postgresql/"${PG_VERSION_TARGET}"/bin/pg_ctl stop -D "/var/lib/pgsql/data/${DATA_DIR}"
 
     [ -f /var/lib/pgsql/data/target_version ] && rm -rf /var/lib/pgsql/data/target_version
