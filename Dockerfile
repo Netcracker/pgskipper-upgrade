@@ -53,6 +53,10 @@ WORKDIR /tmp
 
 COPY ./docker/start.sh /start.sh
 
+RUN chgrp 0 /etc &&  \
+    chmod g+w /etc && \
+    chgrp 0 /etc/passwd &&  \
+    chmod g+w /etc/passwd
 
 RUN chgrp 0 /var/lib/pgsql/ && chmod g+w /var/lib/pgsql/ && chmod 777 /var/lib/pgsql && \
     chgrp 0 /var/run/postgresql/ && chmod g+w /var/run/postgresql/ && chmod 777 /var/run/postgresql && \
