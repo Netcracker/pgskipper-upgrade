@@ -104,7 +104,7 @@ function handle_master_upgrade() {
 
     CHECK_CODE=$?
 
-    if [[ "CHECK_CODE" -ne 0 ]]; then
+    if [[ "$CHECK_CODE" -ne 0 ]]; then
         echo "[$(date +%Y-%m-%dT%H:%M:%S)] Check cluster before upgrade - Failed."
         echo "check exit code: ${CHECK_CODE}"
         cat /var/lib/pgsql/data/check_result
