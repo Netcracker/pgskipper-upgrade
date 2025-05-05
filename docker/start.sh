@@ -89,7 +89,14 @@ function handle_master_upgrade() {
 
     chmod 750 $MIGRATION_PATH/${DATA_DIR}
 
-    cat "/var/lib/pgsql/data/${DATA_DIR}/postgresql.conf" | grep shared_preload_libraries >> $MIGRATION_PATH/tmp/pg/postgresql.conf
+    SHARED_PRELOAD_LIBRARIES=$(grep "shared_preload_libraries" /var/lib/pgsql/data/${DATA_DIR}/postgresql.conf)
+
+    if [[ -z ${SHARED_PRELOAD_LIBRARIES} ]]; then
+        echo "shared_preload_libraries is not found in PostgreSQL config, please check PostgreSQL params, exiting..."
+        exit 1
+    fi
+
+    echo ${SHARED_PRELOAD_LIBRARIES} >> $MIGRATION_PATH/tmp/pg/postgresql.conf
 
     ls -la $MIGRATION_PATH
 
