@@ -40,8 +40,8 @@ RUN apt-get --no-install-recommends install -y \
      postgresql-13-pg-track-settings postgresql-13-pg-wait-sampling postgresql-13-cron postgresql-13-set-user postgresql-13-pg-stat-kcache postgresql-13-pgaudit postgresql-13-pg-qualstats postgresql-13-hypopg postgresql-13-powa \
      postgresql-14-pg-track-settings postgresql-14-pg-wait-sampling postgresql-14-cron postgresql-14-set-user postgresql-14-postgis postgresql-14-pg-stat-kcache postgresql-14-pgaudit postgresql-14-pg-qualstats postgresql-14-hypopg postgresql-14-powa postgresql-14-pg-hint-plan postgresql-14-pgnodemx postgresql-14-decoderbufs \
      postgresql-15-pg-track-settings postgresql-15-pg-wait-sampling postgresql-15-cron postgresql-15-set-user postgresql-15-postgis postgresql-15-pg-stat-kcache postgresql-15-pgaudit postgresql-15-pg-qualstats postgresql-15-hypopg postgresql-15-powa postgresql-15-pg-hint-plan postgresql-15-pgnodemx postgresql-15-decoderbufs \
-     postgresql-16-pg-track-settings postgresql-16-pg-wait-sampling postgresql-16-cron postgresql-16-set-user postgresql-16-postgis postgresql-16-pg-stat-kcache postgresql-16-pgaudit postgresql-16-pg-qualstats postgresql-16-hypopg postgresql-16-powa postgresql-16-pg-hint-plan postgresql-16-pgnodemx postgresql-16-decoderbufs
-
+     postgresql-16-pg-track-settings postgresql-16-pg-wait-sampling postgresql-16-cron postgresql-16-set-user postgresql-16-postgis postgresql-16-pg-stat-kcache postgresql-16-pgaudit postgresql-16-pg-qualstats postgresql-16-hypopg postgresql-16-powa postgresql-16-pg-hint-plan postgresql-16-pgnodemx postgresql-16-decoderbufs \
+     postgresql-17-pg-track-settings postgresql-17-pg-wait-sampling postgresql-17-cron postgresql-17-set-user postgresql-17-postgis postgresql-17-pg-stat-kcache postgresql-17-pgaudit postgresql-17-pg-qualstats postgresql-17-hypopg postgresql-17-powa postgresql-17-pg-hint-plan postgresql-17-pgnodemx postgresql-17-decoderbufs
 RUN apt-get --no-install-recommends install -y libproj-dev libgdal30 libgeos3.10.2 libgeotiff5 libsfcgal1
 
 RUN localedef -i en_US -f UTF-8 en_US.UTF-8 && \
